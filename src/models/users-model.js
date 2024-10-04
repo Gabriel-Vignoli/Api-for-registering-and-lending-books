@@ -5,12 +5,12 @@ const bcrypt = require('bcrypt')
 
 const users = [
   {
-    id: "1",
+    id: '1',
     name: "Gabriel Vignoli",
     email: "gabriel@email.com",
     password: "123456",
   },
-  { id: "2", name: "Miguel Vignoli", email: "gabriel@email.com", password: "0000" },
+  { id: uuid(), name: "Miguel Vignoli", email: "gabriel@email.com", password: "0000" },
 ];
 
 module.exports = {
