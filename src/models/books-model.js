@@ -33,4 +33,18 @@ module.exports = {
     books = books.filter((book) => book.id !== id);
     return deleteBook;
   },
+
+  takeBook: (id) => {
+    const bookIndex = books.findIndex((book) => book.id === id);
+    if (bookIndex === -1) throw new HttpError("Book not found", 404);
+
+    books[bookIndex].quantityAvailable -= 1
+  },
+
+  returnBook: (id) => {
+    const bookIndex = books.findIndex((book) => book.id === id);
+    if (bookIndex === -1) throw new HttpError("Book not found", 404);
+
+    books[bookIndex].quantityAvailable += 1
+  }
 };
